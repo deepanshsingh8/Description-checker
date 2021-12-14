@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<h1>MAIN</h1>
+{% endblock %}
+
+
+{% block body %}
+<h2>Please input the image and its description</h2>
+<p>{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li>{{message}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</p>
+{% if filename %}
+<div style="padding:20px;">
+    <img src = "{{ url_for('display_image', filename = filename) }}">
+</div>
+{% endif %}
+<form method="POST" action="" enctype="multipart/form-data">
+    <p><input type="file" name="file"></p>
+    <p>DESCRIPTION <input type = "text" name = "description" /></p>
+    <p><input type="submit" value="Submit"></p>
+</form>
+{% if processed_text %}
+<p id="text">{{ processed_text }}</p>
+{% endif %}
+{% endblock %}

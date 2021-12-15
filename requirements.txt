@@ -120,9 +120,6 @@ tf-estimator-nightly==2.5.0.dev2021032501
 thop==0.0.31.post2005241907
 threadpoolctl==2.1.0
 toml==0.10.2
-torch==1.8.1+cu102
-torchaudio==0.8.1
-torchvision==0.9.1+cu102
 tornado==6.1
 tqdm==4.59.0
 traitlets==5.0.5
